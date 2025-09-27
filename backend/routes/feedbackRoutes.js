@@ -79,7 +79,7 @@ router.post("/:id/comment", async (req, res) => {
 
     const newComment = {
       _id: new mongoose.Types.ObjectId(),
-      userName, // ✅ use userName instead of user
+      userName, 
       text,
       replies: [],
     };
@@ -109,7 +109,7 @@ router.post("/:id/comment/:commentId/reply", async (req, res) => {
 
     const newReply = {
       _id: new mongoose.Types.ObjectId(),
-      userName, // ✅ use userName instead of user
+      userName, 
       text,
     };
 
@@ -127,3 +127,4 @@ router.post("/:id/comment/:commentId/reply", async (req, res) => {
 
 
 module.exports = router;
+
