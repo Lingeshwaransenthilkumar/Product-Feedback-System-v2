@@ -1,9 +1,10 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import { getSecureItem } from "../utils/secureStorage";
 
 const ProtectedRoute = ({ children }) => {
   // JWT token 
-  const token = localStorage.getItem("token"); 
+  const token = getSecureItem("token");  
   if (!token) {
     // if no token, redirect to login
     return <Navigate to="/" replace />;
@@ -13,3 +14,4 @@ const ProtectedRoute = ({ children }) => {
 };
 
 export default ProtectedRoute;
+
